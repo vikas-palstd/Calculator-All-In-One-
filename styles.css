@@ -1,0 +1,166 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e2f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Calculator Container */
+.calculator-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: #292943;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header */
+header {
+    margin-bottom: 20px;
+}
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+header p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #aaa;
+}
+.developer-info {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #aaa;
+}
+.developer-info a {
+    color: #6fdf91;
+    text-decoration: none;
+}
+.developer-info a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Buttons */
+nav {
+    margin-bottom: 20px;
+}
+nav .tab-button {
+    background-color: #3a3a55;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+nav .tab-button:hover {
+    background-color: #5e5e7b;
+}
+nav .tab-button:focus {
+    background-color: #6f6f91;
+    outline: none;
+}
+
+/* Calculator Tabs */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.tab-content.hidden {
+    display: none;
+}
+.tab-content:not(.hidden) {
+    display: block;
+}
+
+/* Basic and Scientific Calculator Styles */
+.tab-content input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #3a3a55;
+    color: #fff;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.buttons button {
+    background-color: #50507a;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.buttons button:hover {
+    background-color: #686898;
+}
+
+/* Graphing Calculator */
+#graphCanvas {
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #3a3a55;
+}
+#graph-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #3a3a55;
+    color: #fff;
+}
+
+/* Financial Calculator */
+label {
+    display: block;
+    margin: 10px 0;
+}
+label input, label select {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: none;
+    border-radius: 5px;
+    background-color: #3a3a55;
+    color: #fff;
+}
+#financial-result {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #6fdf91;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

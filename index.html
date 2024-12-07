@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <header>
+            <h1>All-in-One Calculator</h1>
+            <p>The perfect calculator for every need!</p>
+            <p class="developer-info">Developed by Vikas. Contact us - <a href="mailto:vikasspal2@gmail.com">vikasspal2@gmail.com</a></p>
+        </header>
+        <nav>
+            <button class="tab-button" data-tab="basic">Basic</button>
+            <button class="tab-button" data-tab="scientific">Scientific</button>
+            <button class="tab-button" data-tab="graphing">Graphing</button>
+            <button class="tab-button" data-tab="financial">Financial</button>
+        </nav>
+        <main>
+            <!-- Basic Calculator -->
+            <section id="basic" class="tab-content">
+                <input type="text" id="basic-display" disabled>
+                <div class="buttons">
+                    <button onclick="basicInput('7')">7</button>
+                    <button onclick="basicInput('8')">8</button>
+                    <button onclick="basicInput('9')">9</button>
+                    <button onclick="basicInput('/')">/</button>
+                    <button onclick="basicInput('4')">4</button>
+                    <button onclick="basicInput('5')">5</button>
+                    <button onclick="basicInput('6')">6</button>
+                    <button onclick="basicInput('*')">*</button>
+                    <button onclick="basicInput('1')">1</button>
+                    <button onclick="basicInput('2')">2</button>
+                    <button onclick="basicInput('3')">3</button>
+                    <button onclick="basicInput('-')">-</button>
+                    <button onclick="basicInput('0')">0</button>
+                    <button onclick="basicInput('.')">.</button>
+                    <button onclick="calculateBasic()">=</button>
+                    <button onclick="basicInput('+')">+</button>
+                    <button onclick="clearBasic()">C</button>
+                </div>
+            </section>
+
+            <!-- Scientific Calculator -->
+            <section id="scientific" class="tab-content hidden">
+                <input type="text" id="scientific-display" disabled>
+                <div class="buttons">
+                    <button onclick="scientificInput('sin(')">sin</button>
+                    <button onclick="scientificInput('cos(')">cos</button>
+                    <button onclick="scientificInput('tan(')">tan</button>
+                    <button onclick="scientificInput('sqrt(')">√</button>
+                    <button onclick="scientificInput('log(')">log</button>
+                    <button onclick="scientificInput('pi')">π</button>
+                    <button onclick="scientificInput('e')">e</button>
+                    <button onclick="scientificCalculate()">=</button>
+                    <button onclick="clearScientific()">C</button>
+                </div>
+            </section>
+
+            <!-- Graphing Calculator -->
+            <section id="graphing" class="tab-content hidden">
+                <canvas id="graphCanvas" width="500" height="300"></canvas>
+                <input type="text" id="graph-input" placeholder="Enter function (e.g., sin(x))">
+                <button onclick="plotGraph()">Plot</button>
+            </section>
+
+            <!-- Financial Calculator -->
+            <section id="financial" class="tab-content hidden">
+                <label>
+                    Currency: 
+                    <select id="currency">
+                        <option value="USD">$</option>
+                        <option value="INR">₹</option>
+                    </select>
+                </label>
+                <label>Principal: <input type="number" id="principal" placeholder="Enter amount"></label>
+                <label>Rate (%): <input type="number" id="rate" placeholder="Annual interest rate"></label>
+                <label>Years: <input type="number" id="years" placeholder="Number of years"></label>
+                <label>Compound/Year: <input type="number" id="compound" placeholder="Compounding frequency"></label>
+                <button onclick="calculateCompound()">Calculate</button>
+                <p id="financial-result"></p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
